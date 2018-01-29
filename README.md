@@ -1,13 +1,11 @@
-# Título do projeto
-
-Teste API de Rotas
+# Teste API de Rotas
 
 API que recebe, através do método POST, o ponto de origem (latitude e longitude), um array de pontos de entrega (latitude e longitude) e retorna a rota de entrega. 
 A rota de entrega está otimizada/ordenada pela distancia mais curta entre os pontos (latitude/longitude)
 
 uso:
-npm install #instala as dependências
-npm start   #inicia a API
+npm install 
+npm start
 
 request:
 
