@@ -4,7 +4,8 @@ API que recebe, através do método POST, o ponto de origem (latitude e longitud
 A rota de entrega está otimizada/ordenada pela distancia mais curta entre os pontos (latitude/longitude)
 
 uso:
-npm install 
+npm install
+
 npm start
 
 request:
