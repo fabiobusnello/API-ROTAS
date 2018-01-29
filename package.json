@@ -1,0 +1,16 @@
+{
+  "name": "teste",
+  "version": "1.0.0",
+  "description": "Teste API de rotas",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server"
+  },
+  "author": "Fabio Busnello",
+  "license": "WTFPL",
+  "dependencies": {
+    "koa": "^2.4.1",
+    "koa-bodyparser": "^4.2.0",
+    "nodemon": "^1.14.11"
+  }
+}

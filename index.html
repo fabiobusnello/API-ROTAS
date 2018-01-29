@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Teste API de Rotas</h1>
+    <div>
+      <p>
+        Esta API recebe, através do método POST, o ponto de origem (latitude e longitude), um array de pontos de entrega (latitude e longitude) e retorna a rota de entrega.
+        A rota de entrega está otimizada/ordenada pela distancia mais curta entre os pontos (latitude/longitude)
+      </p>
+      <p>
+          <a href="rotas.zip">Baixar código-fonte</a>
+      </p>
+    </div>
+    <form method="post" action="" id="frm">
+        <label><b>Origem</b></label>
+        <input type="text" name="origem" value='{ "latitude": "-23.719736", "longitude": "-46.857663" }' />
+        <label><b>Destinos</b></label>
+        <input type="text" name="destinos" value='[{ "latitude": "-23.545568", "longitude": "-46.473141" }, { "latitude": "-23.599204", "longitude": "-46.721131" }, { "latitude": "-23.527134", "longitude": "-46.677385" }, { "latitude": "-23.938226", "longitude": "-47.060511" }]' />
+        <input type="submit" value="Testar">
+      </form><br>
+      <div>
+        <b>Request (aceita somente metodo POST)</b>
+      <pre>
+        <b>Origem</b>
+        { 
+          "latitude": "-23.719736",
+          "longitude": "-46.857663" 
+        }
+        <br>
+        <b>Destinos</b>
+        [
+            { "latitude": "-23.545568", "longitude": "-46.473141" },
+            { "latitude": "-23.599204", "longitude": "-46.721131" },
+            { "latitude": "-23.527134", "longitude": "-46.677385" },
+            { "latitude": "-23.938226", "longitude": "-47.060511" }
+            .
+            .
+            .
+        ]
+      </pre>
+      </div>
+    
+      <div>
+        <b>Response (entrega)</b>
+      <pre>
+        <b>Destinos na ordem de Entrega</b>
+           {
+               "origem": { "latitude": "-23.719736", "longitude": "-46.857663" },
+               "entregas": [
+                   {
+                       "distancia": 19.313046146300824,
+                       "latitude": "-23.599204",
+                       "longitude":"-46.721131","entrega":1
+                    },
+                   {
+                       "distancia": 9.170697040719539,
+                       "latitude": "-23.527134",
+                       "longitude": "-46.677385",
+                       "entrega": 2
+                    },
+                   {
+                       "distancia": 20.922156046630896,
+                       "latitude": "-23.545568",
+                       "longitude": "-46.473141",
+                       "entrega": 3
+                    },                
+                   {
+                       "distancia": 74.03080074681122,
+                       "latitude": "-23.938226",
+                       "longitude": "-47.060511",
+                       "entrega":4
+                    }
+                ]
+            }
+      </pre>
+      </div>
+    
+</body>
+</html>
