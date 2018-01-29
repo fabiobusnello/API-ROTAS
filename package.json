@@ -1,7 +1,7 @@
 {
   "name": "teste",
   "version": "1.0.0",
-  "description": "Teste API de rotas",
+  "description": "Teste API de Rotas",
   "main": "server.js",
   "scripts": {
     "start": "node server"

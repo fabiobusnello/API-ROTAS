@@ -1,11 +1,13 @@
 'use strict'
 /**
- * Módulo que calcula as distâncias de cada local e retorna de forma ordenada por destinos mais proximos
- * by Fábio Busnello
- * fabiocouto22@gmail.com
+ * Módulo que calcula as distâncias de cada local e retorna de forma ordenada por 
+ * destinos mais proximos
  */
 
-//módulo que calcula a distância entre dois pontos latitude e longitude
+/*carrega a dependencia do 
+módulo que calcula a distância
+entre dois pontos latitude e longitude*/
+
 const distancia = require('./distancia')
 
 //método que calcula a menor distância entre origem e os destinos informados

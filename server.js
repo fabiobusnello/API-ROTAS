@@ -4,7 +4,6 @@ const Koa = require('koa')
 const bodyParser = require('koa-bodyparser');
 const fs = require('fs')
 const rotas = require('./rotas')
-//const roteriza = require('./local')
 const app = new Koa()
 
 app.use(bodyParser({
@@ -14,18 +13,29 @@ app.use(bodyParser({
   }))
 
 app.use(async ctx => {
-  const body = fs.readFileSync('./index.html', 'utf-8')
+  
+
+  //serve o font caso a rota passe pelo nome do arquivo de font empacotado
   if(ctx.path == '/rotas.zip' ){
     const font = fs.readFileSync('./rotas.zip')
     return ctx.response.body = font
   }
-  
-  
-
-  console.log(ctx.path)
-  if(ctx.method === 'GET') return ctx.body = body
+  if(ctx.method === 'GET') {
+    /**
+    * serve o arquivo estático index.html com as instruções de uso e um teste embutido
+    * por ser apenas um arquivo html simples optei por não utilizar um diretório estático
+     já que não é este o propósito desta API.
+    */    
+    const body = fs.readFileSync('./index.html', 'utf-8')
+    return ctx.body = body
+  }
+  /*
+   Logo abaixo é onde a magia toda acontece, quando existe dados via post,
+   principalmente quando passados os parâmetros de forma correta
+   retorna {status: false, msg: 'mensagem de erro'} em caso de erro ou a rota de forma
+   sequencial a ser seguida.
+  */
   if(ctx.method === 'POST') { rotas(ctx) }
-
 })
 
 app.on('error', (err, ctx) => {

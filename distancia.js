@@ -1,4 +1,7 @@
 'use strict'
+/**
+ * módulo que calcula a distância em Km entre uma origem e um destino
+ */
 
 //método que calcula a distância entre dois pontos latitude e longitude
 const distancia = ( LatOrigem, LongOrigem,  LatDest, LongDest ) => {
@@ -10,7 +13,7 @@ const distancia = ( LatOrigem, LongOrigem,  LatDest, LongDest ) => {
   const dLat = ( LatDest - LatOrigem ) * Math.PI / 180
   const dLon = ( LongDest - LongOrigem ) * Math.PI / 180
 
-  //cálculo que considera a curvatura da terra
+  //cálculo que considera a curvatura da terra utilizando seno e cosseno do javascript
   const a = Math.sin( dLat / 2 ) 
     * Math.sin( dLat / 2 ) 
       + Math.cos( LatOrigem * Math.PI / 180 ) 

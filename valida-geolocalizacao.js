@@ -1,5 +1,9 @@
 'use strict'
-
+/**
+ * Modulo que valida se os dados passados via post correspondem a uma coordenada e
+ * se é um objeto
+ * 
+ */
 const isJson = ( obj ) => {
   try{
     return JSON.parse( obj )
